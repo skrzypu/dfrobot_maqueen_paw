@@ -1,0 +1,12 @@
+let oldeglosc = 0
+input.onButtonPressed(Button.A, function () {
+    basic.showIcon(IconNames.Happy)
+    while (true) {
+        oldeglosc = maqueen.Ultrasonic(PingUnit.Centimeters)
+        if (oldeglosc < 10) {
+            maqueen.motorStop(maqueen.Motors.All)
+        } else {
+            maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 100)
+        }
+    }
+})
